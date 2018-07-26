@@ -5782,15 +5782,11 @@ tbody.collapse.in {
   font-style: normal; }
 
 @font-face {
-  font-family: 'Appetite';
-  font-style: Italic;
-  src: url("../fonts//AppetiteItalic.eot");
-  src: url("../fonts//AppetiteItalic.eot") format("embedded-opentype"), url("../fonts//AppetiteItalic.woff2") format("woff2"), url("../fonts//AppetiteItalic.woff") format("woff"), url("../fonts//AppetiteItalic.ttf") format("truetype"), url("../fonts//AppetiteItalic.svg#AppetiteItalic") format("svg"); }
-
-@font-face {
-  font-family: 'Appetite';
-  src: url("../fonts//Appetite.eot");
-  src: url("../fonts//Appetite.eot") format("embedded-opentype"), url("../fonts//Appetite.woff2") format("woff2"), url("../fonts//Appetite.woff") format("woff"), url("../fonts//Appetite.ttf") format("truetype"), url("../fonts//Appetite.svg#Appetite") format("svg"); }
+  font-family: 'The West Gate';
+  src: url("../fonts/TheWestGate.eot");
+  src: url("../fonts/TheWestGate.eot?#iefix") format("embedded-opentype"), url("../fonts/TheWestGate.woff2") format("woff2"), url("../fonts/TheWestGate.woff") format("woff"), url("../fonts/TheWestGate.ttf") format("truetype"), url("../fonts/TheWestGate.svg#TheWestGate") format("svg");
+  font-weight: normal;
+  font-style: normal; }
 
 @font-face {
   font-family: 'Open Sans';
@@ -6095,8 +6091,8 @@ table {
     -webkit-border-radius: 0px;
     border-radius: 0px; }
   .hover-style-1:active, .btn-def:active, .btn-icon:active {
-    -webkit-box-shadow: -2px -2px 0px 0px #e0e0e0, 2px 2px 0px 0px #22355d, 5px 5px 0 0 #15213b, 0 0 10px 0 #000;
-    box-shadow: -2px -2px 0px 0px #e0e0e0, 2px 2px 0px 0px #22355d, 5px 5px 0 0 #15213b, 0 0 10px 0 #000; }
+    -webkit-box-shadow: inset 0 0 15px -5px #000;
+    box-shadow: inset 0 0 15px -5px #000; }
   .hover-style-1.reverse:hover, .reverse.btn-def:hover, .reverse.btn-icon:hover {
     -webkit-box-shadow: -5px -5px 0px 0px #e0e0e0, 5px 5px 0px 0px #15213b, 10px 10px 0 0 #ffde00, 0 0 20px 0 #000;
     box-shadow: -5px -5px 0px 0px #e0e0e0, 5px 5px 0px 0px #15213b, 10px 10px 0 0 #ffde00, 0 0 20px 0 #000; }
@@ -6148,10 +6144,10 @@ table {
   font-family: "Open Sans"; }
 
 .font-family-2 {
-  font-family: "Appetite"; }
+  font-family: "sans-serif"; }
 
 .font-family-3 {
-  font-family: "sans-serif"; }
+  font-family: "The West Gate"; }
 
 .bg-color-white {
   background-color: white; }
@@ -6601,7 +6597,7 @@ h1, h2, h3, h4 {
   font-weight: 400;
   margin-bottom: 10px;
   line-height: 150%;
-  font-family: "Appetite"; }
+  font-family: "sans-serif"; }
 
 h1 {
   position: relative;
@@ -6772,7 +6768,7 @@ a[target="_blank"] {
 .pie-form-control {
   border: 1px solid transparent;
   background-color: white;
-  padding: 7px 15px;
+  padding: 7px 12px;
   color: inherit;
   color: currentColor; }
 
@@ -6868,6 +6864,9 @@ header * {
 
 .header-top-content {
   background-color: #15213b; }
+
+.header-middle-content {
+  background-color: #22355d; }
 
 .header-bottom-content {
   position: relative;
@@ -6966,8 +6965,10 @@ header * {
     background-color: #22355d; }
 
 .signin .singin-box {
-  width: 230px;
   position: absolute;
+  width: 230px;
+  -webkit-box-shadow: 0 0 15px -3px black;
+  box-shadow: 0 0 15px -3px black;
   padding-top: 15px;
   z-index: 1; }
 

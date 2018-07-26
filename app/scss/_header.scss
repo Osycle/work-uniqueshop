@@ -47,12 +47,14 @@ header{
 .header-top-content{
 	background-color: $color-3;	
 }
+.header-middle-content{
+	background-color: $color-2;		
+}
 .header-bottom-content{
 	position: relative;
 	top: 0px;
 	background-color: white;
 	transform: inherit;transform: unset;
-
 }
 .header-top-content, .header-bottom-content{
 	transition: all 0.5s ease 0.0s;
@@ -150,8 +152,9 @@ header{
 .signin{
 
 	.singin-box{
-		width: 230px;
 		position: absolute;
+		width: 230px;
+		box-shadow: 0 0 15px -3px black;
 		padding-top: 15px;
 		z-index: 1;
 	}
