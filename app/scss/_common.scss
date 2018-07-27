@@ -702,6 +702,11 @@ table {
 	line-height: 100%;
 }
 
+.parag-gray{
+	p{
+		color: gray;
+	}
+}
 
 body{
 	-ms-text-size-adjust: none;
@@ -709,6 +714,8 @@ body{
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
 	text-size-adjust: none;
+	background-image: url('../img/bg/bg-body.jpg');
+
 	font: 14px $font-family-1;
 	overflow-x: hidden;
 	//color: white;
@@ -804,15 +811,12 @@ h1,h2,h3,h4,h5{
 	line-height: 170%;
 	text-transform: uppercase;
 }
-h1,h2,h3{
-	font-family: $font-family-1;
-}
+
 h1, h2, h3, h4{
 	margin-top: 10px;
 	font-weight: 400;
 	margin-bottom: 10px;
 	line-height: 150%;
-	font-family: $font-family-2;
 }
 h1{
 	position: relative;	
@@ -840,7 +844,6 @@ h5{
 	font-size: em(15, 16);
 	font-weight: 700;
 	text-transform: uppercase;
-	font-family: $font-family-1;
 }
 h1,h2,h3,h4,h5 {
 	&[align='center']{

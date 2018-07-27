@@ -264,7 +264,7 @@ html{
 .pie-flex-center{
 	display: flex;
 	align-items: center;
-	height: 100%;
+	height: inherit;
 	&>div{
 		width: 100%;
 	}
