@@ -9,24 +9,15 @@
 .bnr-slider{
 	position: relative;
 	overflow: hidden;
-	padding-bottom: 50px;
 	.flickity-slider{
 		transform: inherit !important;
 	}
 	.bnr-carousel{
-		background-color: $color-3;
+		background-color: white;
 		background-repeat: no-repeat;
+		position: relative;
 		background-size: cover;
 		background-position: center center;
-	}
-	.carousel-header-block{
-		background-color: rgba($color-3, 0.5);
-	}
-	.carousel-prev-next{
-		width: inherit;
-		left: 50%;
-		transform: translateX(-50%);
-		//position: relative;
 	}
 	figure{
 		height: 505px;
@@ -56,11 +47,49 @@
 		padding: 15px 20px;
 		color: white;
 	}
+	.carousel-header-block{
+		background-color: rgba($color-3, 0.5);
+	}
+	.carousel-prev-next{
+		width: ingerit;
+		//((100/12)*8)+%
+		left: 50%;
+		transform: translateX(-50%);
+		.bg-wrapper{
+			bottom: 0;
+			position: absolute;
+			background-color: $color-2;
+			height: 40px; 
+		}
+		.next, .prev{
+			color: white;
+			width: 50%;
+			height: 100%;
+			text-align: center;
+			transform: translateY(-50%);
+			transition: all 0.3s ease;
+			.fa{
+				padding-top: 10px;
+			}
+			&:hover{
+				background-color: $color-3;
+				color: white;
+			}
+		}
+		.prev{
+			left: 0;
+		}
+		.next{
+			right: 0;
+		}
+	}
+	.btn-def{
+		position: absolute;
+		bottom: -39px;
+		color: black;
+	}
 
 	@media(min-width: 992px) {
-		.carousel-header-block{
-			left: 30px;
-		}
 	}
 	@media(max-width: 991px) {
 		font-size: 0.9em;
@@ -78,21 +107,157 @@
 		word-wrap: break-word;
 	}
 }
-.img-cloud{
-	bottom:0;
-	height: 188px;
-	position: absolute;
-	width: 100%;
-	background-image: url('../img/other/cloud.png');
-	background-repeat: repeat-x;
-	background-position: center bottom;
-	z-index: 3;
-	pointer-events: none;
+
+
+
+
+
+
+
+// short-productions
+.short-productions{
+	& > .container{
+		position: relative;
+	}
+}
+.short-productions-nav{
+	position: relative;
 	&:before{
-		//@extend .claf;
-		//width: 100%;
-		//z-index: 1;
-	} 
+		@extend .claf;
+		height: 3px;
+		width: 90%;
+		background-color: $color-gray-1;
+		bottom: 10px;
+		top: inherit;
+	}
+	h3{
+		position: relative;
+		line-height: 200%;
+		font-weight: 700;
+		transition: all 0.3s ease-in-out;
+		&:before{
+			@extend .claf;
+			transition: all 0.3s ease-in-out;
+			top: inherit;
+			bottom: 0;
+			width: 30px;
+			height: 3px;
+			@extend .trans-h-center;
+		}
+	}
+	.nav-item{
+		margin: 0 15px;
+		&.is-selected{
+			h3:before{
+				background-color: $color-3;
+			}
+		}
+		&:not(.is-selected){
+			color: $color-gray-2;
+		}
+	}
+	.navdot{
+		@extend .trans-v-center;
+		position: absolute;
+		right:0;
+		.flex{
+			justify-content: flex-end;
+			flex: 1 1;
+		}
+		background-color: rgba($color-1, 0.0);
+		margin-top: 16px;
+		//height: 150px;
+		width: 200px;
+		display: block;
+		a{
+			width: 13px;
+			height: 13px;
+			transition: all 0.3s ease-in-out;
+			border-radius: 50%;
+			display: inline-block;
+			background-color: $color-gray-1;
+		}
+		li{
+			margin: 0 5px;
+			&.is-selected{
+				a{
+					background-color: $color-2;
+				}
+			}
+		}
+	}
+}
+
+.short-productions-items{
+	figure{
+		border: 1px solid $color-gray-1;
+		overflow: hidden;
+		background-color: white;
+		.img-content{
+			height: 260px;
+			overflow: hidden;
+		}
+		.img{
+			height: 100%;
+			transition: all 1s ease;
+		}
+		&:hover{
+			.price-content{
+				background-color: $color-3;
+			}
+			.btn-basket-content{
+				background-color: $color-1;
+			}
+			.desc-content{
+				
+				color: $color-2;
+			}
+			.img{
+				transform: scale(1.1);
+			}
+		}
+	}
+	.price, .btn-basket{
+		height: 40px;
+	}
+	.desc-content{
+		transition: all 0.3s linear;
+		position: relative;
+		font-weight: 600;
+		&:before{
+			@extend .claf;
+			height: 1px;
+			background-color: $color-2;
+			top: inherit;
+			bottom: 0;
+		}
+		&:after{
+			@extend .claf;
+			height: 5px;
+			background-color: $color-2;
+			top: inherit;
+			width: 50px;
+			bottom: -2px;
+			@extend .trans-h-center;
+		}
+
+	}
+	.btn-content{
+		.pie-flex-center{
+			height: 40px;
+			transition: all 0.3s ease-in-out;
+		}
+		.btn-basket-content{
+			border: 1px solid $color-2;
+			color: $color-2;
+		}
+		.price-content{
+			color: white;
+			font-weight: 600;
+			font-size: 1.5em;
+			background-color: #a5a5a5;
+		}
+	}
 }
 
 
@@ -101,4 +266,98 @@
 
 
 
+// short-interesting
+.short-interesting{
+	& > .container{
+		position: relative;
+	}
+}
+.short-interesting-nav{
+	position: relative;
+	&:before{
+		@extend .claf;
+		height: 3px;
+		width: 90%;
+		background-color: $color-gray-1;
+		bottom: 10px;
+		top: inherit;
+	}
+	h3{
+		position: relative;
+		line-height: 200%;
+		font-weight: 700;
+		transition: all 0.3s ease-in-out;
+		&:before{
+			@extend .claf;
+			transition: all 0.3s ease-in-out;
+			top: inherit;
+			bottom: 0;
+			width: 30px;
+			height: 3px;
+			@extend .trans-h-center;
+		}
+	}
+	.nav-item{
+		margin: 0 15px;
+		&.is-selected{
+			h3:before{
+				background-color: $color-3;
+			}
+		}
+		&:not(.is-selected){
+			color: $color-gray-2;
+		}
+	}
+	.navdot{
+		@extend .trans-v-center;
+		position: absolute;
+		right:0;
+		.flex{
+			justify-content: flex-end;
+			flex: 1 1;
+		}
+		background-color: rgba($color-1, 0.0);
+		margin-top: 16px;
+		//height: 150px;
+		width: 200px;
+		display: block;
+		a{
+			width: 13px;
+			height: 13px;
+			transition: all 0.3s ease-in-out;
+			border-radius: 50%;
+			display: inline-block;
+			background-color: $color-gray-1;
+		}
+		li{
+			margin: 0 5px;
+			&.is-selected{
+				a{
+					background-color: $color-2;
+				}
+			}
+		}
+	}
+}
 
+.short-interesting-items{
+	figure{
+		border: 1px solid $color-gray-1;
+		overflow: hidden;
+		background-color: white;
+		.img-content{
+			height: 260px;
+			overflow: hidden;
+		}
+		.img{
+			height: 100%;
+			transition: all 1s ease;
+		}
+		&:hover{
+			.img{
+				transform: scale(1.1);
+			}
+		}
+	}
+
+}

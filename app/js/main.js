@@ -234,9 +234,18 @@
 		$(".custom-prev-next").map(function(i, el){
 			flickityPrevNext(el);
 		})
-		
-
-
+		function tabSyncClick( tabClickContent ){
+			if($(tabClickContent).length != 0){
+				$(tabClickContent).on("click", ".nav-item", function(){
+					var index = $(this).index();
+					$(tabClickContent).find(".nav-item").parent().map(function(i, el){
+						$(el).children().removeClass("is-selected").eq(index).addClass("is-selected");
+					})
+				})
+			}
+		}
+		tabSyncClick(".short-productions");
+		tabSyncClick(".short-interesting");
 
 
 

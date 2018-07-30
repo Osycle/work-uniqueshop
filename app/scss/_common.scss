@@ -17,7 +17,7 @@ $font-family-3: "The West Gate";
 $color-scroll: $color-1;
 $color-footer: #0071BC;
 
-$color-gray_1: #f0f0f0;
+$color-gray_1: #e2e2e2;
 $color-gray_2: #7e7e7e;
 $color-gray_3: rgba($color-gray-1, 0.3);
 
@@ -321,10 +321,10 @@ table {
 }
 .hover-style-1{
 	transition: all 0.3s ease;
+	box-shadow:  0 0 0px 0px #000;
 	&:hover{
-		filter: brightness(105%);
+		//filter: brightness(105%);
 		box-shadow:  0 0 15px -5px #000;
-		border-radius: 0px;
 	}
 	&:active{
 		box-shadow: inset 0 0 15px -5px #000;
@@ -348,6 +348,7 @@ table {
 }
 .hover-style-2{
 	transition: all 0.3s ease;
+	box-shadow: 0 0 0 0 transparent;
 	&:hover{
 		filter: brightness(105%);
 		box-shadow: -5px -5px 0px 0px darken(white, 12%), 5px 5px 0px 0px $color-2;
@@ -395,6 +396,9 @@ table {
 
 .letter-3{
 	letter-spacing: 3px;
+}
+.font-size-big{
+	font-size: 54px;
 }
 
 .img{
@@ -539,6 +543,7 @@ table {
 	text-transform: uppercase;
 	color: white;
 	font-weight: 600;
+	border-radius: 5px;
 	//background-color: $color-1;
 	font-family: $font-family-1;
 	button{
@@ -574,7 +579,7 @@ table {
 .btn-def, .btn-icon{
 	@extend .btn-style;
 	@extend .hover-style-1;
-	transition: all 0.5s ease-in-out;
+	transition: box-shadow 0.1s steps(4);
 	*{
 		color: inherit;
 	}
@@ -897,7 +902,6 @@ main{
 	//overflow: hidden;
 	position: relative;
 	//min-height: 300px;
-	background-color: white;
 	color: black;
 	p{
 		line-height: 140%;
