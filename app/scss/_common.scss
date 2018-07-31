@@ -8,7 +8,7 @@ $color-1: #ffde00 !default;
 $color-2: #22355d !default;
 $color-3: #15213b !default;
 $color-4: #384f92 !default;
-$color-5: #008CC7 !default;
+$color-5: #d58e32 !default;
 
 $font-family-1: "Open Sans";
 $font-family-2: "sans-serif";
@@ -19,7 +19,7 @@ $color-footer: #0071BC;
 
 $color-gray_1: #e2e2e2;
 $color-gray_2: #7e7e7e;
-$color-gray_3: rgba($color-gray-1, 0.3);
+$color-gray_3: #a5a5a5;
 
 $bg-color-black: #555555;
 $bg-color-gray: #f0f0f0;
@@ -190,16 +190,14 @@ html{
 */
 .breadcrumb{
 	background: transparent;
-	color: black;
 	font-weight: 600;
-	&, a, .active{ 
-		color: rgba(black, 1);
+	&, a, .active{ 		
 		transition: all 0.3s ease-in;
 		font-size: em(15, 16);
 		a:hover{
 			transform: translateY(-5px);
 			text-decoration: none;
-			color: $color-2;
+			color: $color-3;
 		}
 		&.reverse{
 			a{
@@ -213,8 +211,14 @@ html{
 			}
 		}
 	}
+	a{
+		color: $color-2;
+	}
 	.active{
-		a{color: $color-1;}
+		a{
+			color: lighten($color-2, 5%);
+			font-weight: 700;
+		}
 	}
 	& > li + li:before{
 
@@ -226,6 +230,12 @@ html{
 	}
 	li{
 		vertical-align: baseline;
+	}
+	@media (max-width:991px) {
+		li{
+			width: 100%;
+			display: block;
+		}
 	}
 }
 
@@ -281,6 +291,7 @@ table {
 .color-2{color: $color-2;}
 .color-3{color: $color-3;}
 .color-4{color: $color-4;}
+.color-5{color: $color-5;}
 
 
 [class*="hover-color"] a, 
@@ -319,66 +330,17 @@ table {
 [underline]{
 	text-decoration: underline;
 }
-.hover-style-1{
-	transition: all 0.3s ease;
-	box-shadow:  0 0 0px 0px #000;
-	&:hover{
-		//filter: brightness(105%);
-		box-shadow:  0 0 15px -5px #000;
-	}
-	&:active{
-		box-shadow: inset 0 0 15px -5px #000;
-	}
-	&.reverse{
-		&:hover{
-			box-shadow: 
-								-5px -5px 0px 0px darken(white, 12%), 
-								5px 5px 0px 0px $color-3, 
-								10px 10px 0 0 $color-1, 
-								0 0 20px 0 #000;
-		}
-		&:active{
-			box-shadow: 
-					-2px -2px 0px 0px darken(white, 12%), 
-					2px 2px 0px 0px $color-3, 
-					5px 5px 0 0 $color-1, 
-					0 0 10px 0 #000;
-		}
-	}
-}
-.hover-style-2{
-	transition: all 0.3s ease;
-	box-shadow: 0 0 0 0 transparent;
-	&:hover{
-		filter: brightness(105%);
-		box-shadow: -5px -5px 0px 0px darken(white, 12%), 5px 5px 0px 0px $color-2;
-		border-radius: 0px;
-	}
-}
-.focus-style-1{
-	transition: all 0.3s ease;
-	box-shadow: 0px 0px 0px 0px darken(white, 12%), 0px 0px 0px 0px $color-2;
-	&:focus{
-		filter: brightness(105%);
-		box-shadow: -5px -5px 0px 0px darken(white, 12%), 5px 5px 0px 0px $color-2;
-		border-radius: 0px;
-	}
-}
-.focus-style-2{
-	transition: all 0.3s ease;
-	box-shadow: 0px 0px 0px 0px darken(white, 12%), 0px 0px 0px 0px $color-2;
-	&:hover{
-		filter: brightness(105%);
-		box-shadow: -5px -5px 0px 0px darken(white, 12%), 5px 5px 0px 0px $color-2;
-		border-radius: 0px;
-	}
-}
-
 
 
 .font-family-1{font-family: $font-family-1;}
 .font-family-2{font-family: $font-family-2;}
 .font-family-3{font-family: $font-family-3;}
+
+.btn-res{
+	background-color: transparent;
+	border: 0;
+	padding: 0;
+}
 
 .bg-color-white{background-color: white;}
 .bg-color-black{background-color: $bg-color-black;}
@@ -388,7 +350,14 @@ table {
 .bg-color-2{background-color: $color-2;}
 .bg-color-3{background-color: $color-3;}
 .bg-color-4{background-color: $color-4;}
+.bg-color-5{background-color: $color-5;}
 
+.info-success{
+	color: #3da835;
+}
+.info-error{
+	color: red;
+}
 
 .text-indent{
 	text-indent: 30px;
@@ -529,10 +498,56 @@ table {
 }
 
 
-.btn-res{
-	background: transparent;
-	border: 0;
-	padding: 0;
+
+
+.hover-style-1{
+	transition: all 0.3s ease;
+	//box-shadow:  0 0 0px 0px #000;
+	&:not([class*="bg-color"]):hover{
+		//box-shadow:  0 0 15px -5px #000;
+		background-color: $color-1;
+	}
+	&:hover{
+		color: black;
+	}
+	&:active{
+		box-shadow: inset 0 0 15px -5px #000;
+	}
+	&.reverse{
+		&:hover{
+			box-shadow: 
+								-5px -5px 0px 0px darken(white, 12%), 
+								5px 5px 0px 0px $color-3, 
+								10px 10px 0 0 $color-1, 
+								0 0 20px 0 #000;
+		}
+		&:active{
+			box-shadow: 
+					-2px -2px 0px 0px darken(white, 12%), 
+					2px 2px 0px 0px $color-3, 
+					5px 5px 0 0 $color-1, 
+					0 0 10px 0 #000;
+		}
+	}
+}
+
+.focus-style-1{
+	transition: all 0.3s ease;
+	box-shadow: 0px 0px 0px 0px darken(white, 12%), 0px 0px 0px 0px $color-2;
+	&:focus{
+		filter: brightness(105%);
+		box-shadow: -5px -5px 0px 0px darken(white, 12%), 5px 5px 0px 0px $color-2;
+		border-radius: 0px;
+	}
+}
+.focus-style-2{
+	transition: all 0.3s ease;
+	box-shadow: 0px 0px 0px 0px darken(white, 12%), 0px 0px 0px 0px $color-2;
+	&:hover{
+		filter: brightness(105%);
+		box-shadow: -5px -5px 0px 0px darken(white, 12%), 5px 5px 0px 0px $color-2;
+		border-radius: 0px;
+	}
 }
 
 
@@ -540,10 +555,9 @@ table {
 	display: block;
 	white-space: nowrap;
 	text-align: center;
-	text-transform: uppercase;
+	//text-transform: uppercase;
 	color: white;
 	font-weight: 600;
-	border-radius: 5px;
 	//background-color: $color-1;
 	font-family: $font-family-1;
 	button{
@@ -579,12 +593,12 @@ table {
 .btn-def, .btn-icon{
 	@extend .btn-style;
 	@extend .hover-style-1;
-	transition: box-shadow 0.1s steps(4);
+	//transition: box-shadow 0.1s steps(4);
 	*{
 		color: inherit;
 	}
 	&:not([class*="bg-color"]){
-		background-color: $color-1;
+		background-color: $color-gray-3;
 	}
 
 	&.radius{
@@ -601,7 +615,6 @@ table {
 
 .btn-opacity{
 	@extend .btn-style;
-	@extend .hover-style-2;
 	background-color: transparent;
 	border: 1px solid currentColor;
 	color: currentColor;
@@ -814,34 +827,32 @@ label{
 h1,h2,h3,h4,h5{
 	color: inherit;
 	line-height: 170%;
-	text-transform: uppercase;
 }
 
 h1, h2, h3, h4{
 	margin-top: 10px;
-	font-weight: 400;
 	margin-bottom: 10px;
 	line-height: 150%;
+	position: relative;	
 }
 h1{
-	position: relative;	
 	font-size: em(40, 16);
 	margin-bottom: 15px;
+	text-transform: uppercase;
 }
 h2{
-	position: relative;
-	font-weight: 600;
+	font-weight: 700;
 	font-size: em(27, 16);
 	margin-bottom: 15px;
+	text-transform: uppercase;
 } 
 h3{
-	position: relative;
-	font-weight: 600;
+	font-weight: 700;
 	font-size: em(20, 16);
+	text-transform: uppercase;
 }
 h4{
 	font-weight: 700;
-	text-transform: uppercase;
 	font-size: em(18, 16);
 }
 h5{	
@@ -882,7 +893,27 @@ h1,h2,h3,h4,h5 {
 		}
 	}
 }
-
+.h-style-1{
+	&:after, &:before{
+		@extend .claf;
+		height: 3px;
+		top: inherit;
+		bottom: -10px;
+	}
+	&:before{
+		background-color: $color-gray-1;
+	}
+	&:after{
+		width: 38px;
+		background-color: $color-2;
+	}
+	@media (max-width:991px){
+		&:after{
+			transform: translateX(-50%);
+			left: 50%;
+		}
+	}
+}
 blockquote{
 	padding: 0 15px 0 35px;
 	border-left: 8px solid;
@@ -1077,21 +1108,22 @@ a[target="_blank"]{
 }
 
 .pie-form-control{
-	border: 1px solid transparent;
+	border: 1px solid $color-gray-1;
 	//border-bottom-color: white;
 	background-color: white;
-	padding: 7px 12px;
 	//border-radius: 30px;
 	color: inherit;
 	color: currentColor;
 }
 
 input.pie-form-control{
-	height: 25px;
+	height: 35px;
 	font-size: 0.8em;
+	padding: 7px 12px;
 }
 textarea.pie-form-control{
 	resize: none;
+	padding: 7px 12px;
 	font-size: 0.8em;
 }
 //modal-control

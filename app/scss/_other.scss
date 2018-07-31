@@ -301,14 +301,21 @@ html body{
 	  	width: 30%;
 			height: auto;
 	  	margin-right: 10px;
-	  	border: 5px solid transparent;
-	  	transition: all 0.3s ease-out;
+	  	border: 2px solid transparent;
+	  	transition: all 0.3s ease-out ;
+	  	.img-content{
+	  		transition: all 0.3s ease-out;
+	  		transform: scale(0.8);
+	  	}
 	  	&.is-nav-selected{
 	  	 //border-color: $color-1;
 	  	}
 		}
 		.is-selected{
-			border-color: rgba($color-1, 1);
+			border-color: rgba($color-3, 1);
+			.img-content{
+				transform: inherit;
+			}
 		}
 	}
 	.flickity-prev-next-button.previous{ left: -10px; }

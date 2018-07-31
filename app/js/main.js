@@ -37,6 +37,11 @@
 			placement: 'bottom',
 			html: true
 		});
+    /*rating appraise*/
+    $(document).on("click", ".rating-appraise li", function(){
+      $(this).siblings().removeClass("cheсked")
+      $(this).addClass("cheсked");
+    });
 		/*FANCYBOX*/
 		if ($("[data-fancybox]").length != 0)
 			$("[data-fancybox]").fancybox({
@@ -269,7 +274,7 @@
 							//friction: 1,
 							//selectedAttraction: 1,
 							initialIndex: 1,
-							draggable: true,
+							draggable: false,
 							contain: true,
 							pageDots: false
 						});
@@ -297,7 +302,31 @@
 
 
 
+    // Прибавление-убавление значении
+    (function(){
+      var form = $("[data-counter]") || null;;
+      if( !form )
+        return;
+      var cntfactor = form.attr("data-counter")*1;
 
+      $(document).on("click", "[data-counter-btn]", function(){
+        var cntVal;
+        var cntInput = $(this).closest( form ).find("[data-counter-input]");
+        
+        cntVal = (cntInput.val()*1);
+
+        if( $(this).hasClass("plus") )
+          cntVal = cntVal + cntfactor;
+        if( $(this).hasClass("minus") & cntVal > 0 )
+          cntVal = cntVal - cntfactor;
+        if( isNaN( cntVal ) || cntVal < 0) cntVal = 0;
+        cntInput.val( cntVal ).attr("value", cntVal)
+      })
+      $(".cnt-input").on( "keypress", function(e){
+        //console.log(this, e);
+      } )
+
+    })();
 
 
 

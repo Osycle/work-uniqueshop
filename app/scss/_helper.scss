@@ -269,6 +269,9 @@ html{
 		width: 100%;
 	}
 }
+.flex-ai-center{
+	align-items: center;
+}
 .pie-flex-justify{
   justify-content: center;
   flex: 1 1;
@@ -753,7 +756,7 @@ img[auto]{
 }
 
 .info-success{
-	color: green;
+	color: #3da835;
 }
 .info-error{
 	color: red;
