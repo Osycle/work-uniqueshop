@@ -93,7 +93,7 @@ html body{
 	background-color: rgba($color-2, 0.8);
 }
 .fancybox-bg{
-	background-color: rgba(white, 0.8);
+	background-color: rgba(black, 0.8);
 	&:before{
 		@extend .claf;
 		border: 0px outset rgba($color-2, 1);
@@ -111,7 +111,7 @@ html body{
 .fancybox-is-open{
 	.fancybox-bg{
 		opacity: 1;
-		background-color: rgba(white, 0.8);
+		background-color: rgba(black, 0.8);
 		&:before, &:after{
 			transition: all 0.8s ease;
 		}
