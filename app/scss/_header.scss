@@ -55,6 +55,9 @@ header{
 	background-image: url('../img/bg/bg-body.jpg');
 	top: 0px;
 	transform: inherit;
+	.search-input input{
+		border-left: none !important;
+	}
 }
 .header-top, .header-bottom{
 	transition: all 0.5s ease 0.0s;
@@ -438,7 +441,13 @@ ul[class*="sub"]{
 .mm-slideout{
 	z-index: auto;
 }
-
+.mm-panel{
+	.search-input{
+		input{
+			border-color: $color-gray-2;
+		}
+	}
+}
 .mm-navbar{
 	position: relative;
 	.close-btn{
@@ -717,7 +726,6 @@ textarea.form-control{
 		}
 		input{
 			border: 1px solid $color-3;
-			border-left: none;
 			transition: all 0.3s ease;
 			background-color: rgba(white, 0.3);
 			height: 100%;
