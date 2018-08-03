@@ -556,7 +556,6 @@ table {
 	white-space: nowrap;
 	text-align: center;
 	//text-transform: uppercase;
-	color: white;
 	font-weight: 600;
 	//background-color: $color-1;
 	font-family: $font-family-1;
@@ -597,10 +596,12 @@ table {
 	*{
 		color: inherit;
 	}
+	&:not([class*="color-"]){
+		color: white;
+	}
 	&:not([class*="bg-color"]){
 		background-color: $color-gray-3;
 	}
-
 	&.radius{
 		border-radius: 20px;
 	}
