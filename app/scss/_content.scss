@@ -127,7 +127,7 @@
 	&:before{
 		@extend .claf;
 		height: 3px;
-		width: 90%;
+		width: 100%;
 		background-color: $color-gray-1;
 		bottom: 10px;
 		top: inherit;
@@ -197,7 +197,11 @@
 		}
 	}
 }
-
+.short-productions-carousel{
+	.flickity-viewport{
+		min-height: 450px;
+	}
+}
 .short-productions-items{
 	figure{
 		border: 1px solid $color-gray-1;
@@ -364,6 +368,12 @@
 			bottom: -10px;
 			top: inherit;
 			background-color: $color-gray-1;
+		}
+		ul{
+			display: flex;
+			@media (max-width: 991px) {
+				flex-direction: column;
+			}
 		}
 		li{
 			position: relative;

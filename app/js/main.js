@@ -215,7 +215,33 @@
 
 
 
+		/*short-productions-carousel*/
+		if( $(".short-productions-carousel figure").length )
+			$(".short-productions-carousel").map(function(i, el){
 
+				var crs = $(el).flickity({
+					imagesLoaded: true,
+					autoPlay: 3300,
+					pauseAutoPlayOnHover: true,
+					arrowShape: arrowStyle,
+					//initialIndex: 0,
+					prevNextButtons: true,
+					draggable: false,
+					wrapAround: $(el).find("figure").length > 4,
+					pageDots: true,
+					contain: false,
+					percentPosition: true,
+					cellSelector: 'figure',
+					cellAlign: "center"
+				});
+				crs.data("flickity");
+          window.crs = crs;
+			});
+			$(".nav-item a").on("show.bs.tab", function(){
+				setTimeout(function(){
+					$(".short-productions-carousel").flickity("resize");
+				}, 250)
+			})
 
 		/*short-gallery-carousel*/
 		if( $(".short-gallery-carousel .carousel-items figure").length )
