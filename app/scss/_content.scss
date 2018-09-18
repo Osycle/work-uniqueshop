@@ -237,6 +237,7 @@
 	.desc-content{
 		transition: all 0.3s linear;
 		position: relative;
+		height: 150px;
 		font-weight: 600;
 		&:before{
 			@extend .claf;
