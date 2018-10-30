@@ -331,10 +331,20 @@
 		}
 		.desc-content{
 	    width: 85%;
-    	top: -30px;
+    	//top: -30px;
     	margin: auto;
     	background-color: white;
     	position: relative;
+    	padding-bottom: 45px;
+    	height: 270px;
+    	.text-center.m-t-15{
+		    position: absolute;
+		    width: 90%;
+		    bottom: 0;
+    	}
+    	.info-content{
+    		display: none;
+    	}
 		}
 		.img{
 			height: 100%;
@@ -654,7 +664,7 @@
 	}
 	@media (min-width:992px) {
 		.text-content{
-			margin-top: -50px;
+			//margin-top: -50px;
 			padding: 20px 60px;		
 		}
 	}

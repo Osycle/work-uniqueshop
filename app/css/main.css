@@ -7786,10 +7786,17 @@ textarea.form-control {
     overflow: hidden; }
   .short-interesting-items figure .desc-content {
     width: 85%;
-    top: -30px;
     margin: auto;
     background-color: white;
-    position: relative; }
+    position: relative;
+    padding-bottom: 45px;
+    height: 270px; }
+    .short-interesting-items figure .desc-content .text-center.m-t-15 {
+      position: absolute;
+      width: 90%;
+      bottom: 0; }
+    .short-interesting-items figure .desc-content .info-content {
+      display: none; }
   .short-interesting-items figure .img {
     height: 100%;
     -webkit-transition: all 1s ease;
@@ -8050,7 +8057,6 @@ textarea.form-control {
 
 @media (min-width: 992px) {
   .article .text-content {
-    margin-top: -50px;
     padding: 20px 60px; } }
 
 @media (max-width: 991px) {
