@@ -53,22 +53,22 @@
 			});
 		/*ELEVATEZOOM*/
 		if ( !checkSm() && $("[data-zoom-image]:not([group])").length )
-			var x = $("[data-zoom-image]:not([group])").elevateZoom({
-				scrollZoom: true,
-				zoomWindowFadeIn: 500,
-				zoomWindowFadeOut: 500,
-				lensFadeIn: 300,
-				lensFadeOut: 300,
-				//cursor: 'pointer', 
-				tint: true,
-				tintColour: '#000',
-				tintOpacity: 0.5,
-				//zoomType        : "lens",
-				//lensShape : "round",
-				//lensSize    : 200,
-				imageCrossfade: true,
-				easing: true
-			});
+		$("[data-zoom-image]:not([group])").elevateZoom({
+			zoomType: "inner", //inner, lens
+			cursor: 'crosshair', //crosshair, pointer
+			//scrollZoom : true,
+			//zoomWindowFadeIn: 500,
+			//zoomWindowFadeOut: 500,
+			//lensFadeIn: 300,
+			//lensFadeOut: 300,
+			//tint:true, 
+			//tintColour:'#000', 
+			//tintOpacity:0.5,
+			//lensShape : "round",
+			//lensSize    : 200,
+			//imageCrossfade: true, 
+			easing : true
+		});
 
 
 		//MIN-MENU

@@ -8374,17 +8374,20 @@ html body .tp-bullets.simplebullets.round .bullet {
 	position: relative;
 }
  */
-.zoomContainer {
-  z-index: 1; }
+/*.zoomContainer{
+	z-index: 1;
+}
+.zoomWindowContainer{
+	//width: 800px;
+	*{
+		border: 5px solid rgba($color-4, 0.5) !important;
+		border-radius: 3px;
+	}
+	left: 15px;
+  position: relative;
+}
 
-.zoomWindowContainer {
-  left: 15px;
-  position: relative; }
-  .zoomWindowContainer * {
-    border: 5px solid rgba(56, 79, 146, 0.5) !important;
-    -webkit-border-radius: 3px;
-    border-radius: 3px; }
-
+*/
 /*
 		_media.scss	
 */
