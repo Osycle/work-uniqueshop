@@ -664,9 +664,13 @@ textarea.form-control{
 		}
 	}
 }
+.header-catalog{
+	height: 73px;
+}
 .menu-catalog{
 	border: 1px solid $color-3;
 	font-size: 0.9em;
+	height: 100%;
 	color: $color-2;
 	position: relative;
 	transition: all 0.4s ease-in-out;
@@ -713,6 +717,7 @@ textarea.form-control{
 //search nav
 .search-nav-content{
 	position: relative;
+	height: 100%;
 	color: $color-2;
 	.fa{
 		color: $color-2;

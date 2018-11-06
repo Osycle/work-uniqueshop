@@ -7426,9 +7426,13 @@ textarea.form-control {
     -webkit-filter: brightness(150%);
     filter: brightness(150%); }
 
+.header-catalog {
+  height: 73px; }
+
 .menu-catalog {
   border: 1px solid #15213b;
   font-size: 0.9em;
+  height: 100%;
   color: #22355d;
   position: relative;
   -webkit-transition: all 0.4s ease-in-out;
@@ -7475,6 +7479,7 @@ textarea.form-control {
 
 .search-nav-content {
   position: relative;
+  height: 100%;
   color: #22355d; }
   .search-nav-content .fa {
     color: #22355d;
